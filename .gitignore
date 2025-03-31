@@ -100,7 +100,6 @@ out
 
 # Nuxt.js
 .nuxt
-dist
 
 # Gatsby
 .cache/
