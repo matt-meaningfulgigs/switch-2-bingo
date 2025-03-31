@@ -1,0 +1,277 @@
+:root {
+    --bg: #f4f4f4;
+    --fg: #111;
+    --cell-bg: #fff;
+    --cell-border: #ccc;
+    --cell-selected-bg: #90ee90;
+    --cell-selected-border: #2ecc71;
+    --bingo-color: #e74c3c;
+    --link: #3498db;
+    --button-bg: #111;
+    --button-fg: #fff;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1e1e1e;
+      --fg: #f0f0f0;
+      --cell-bg: #2a2a2a;
+      --cell-border: #555;
+      --cell-selected-bg: #2ecc71;
+      --cell-selected-border: #27ae60;
+      --bingo-color: #e74c3c;
+      --link: #76bfff;
+      --button-bg: #f0f0f0;
+      --button-fg: #111;
+    }
+  }
+  
+  body {
+    font-family: system-ui, sans-serif;
+    text-align: center;
+    background: var(--bg);
+    color: var(--fg);
+    padding: 2em;
+    margin: 0;
+  }
+  
+  h1 {
+    margin-bottom: 0.2em;
+  }
+  
+  .subtitle {
+    font-style: italic;
+    color: #888;
+    margin-top: 0;
+    margin-bottom: 2em;
+  }
+  
+  #bingo-card {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .card-cell {
+    background: var(--cell-bg);
+    padding: 10px;
+    border: 2px solid var(--cell-border);
+    border-radius: 10px;
+    min-height: 80px;
+    font-size: 0.85em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .card-cell:hover {
+    background: rgba(127, 255, 212, 0.1);
+  }
+  
+  #bingo-message {
+    font-size: 1.5em;
+    color: var(--bingo-color);
+    font-weight: bold;
+    margin-top: 1.5em;
+    display: none;
+  }
+  
+  a {
+    color: var(--link);
+    word-break: break-all;
+  }
+  
+  button {
+    padding: 0.6em 1.2em;
+    background: var(--button-bg);
+    color: var(--button-fg);
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  button:hover {
+    opacity: 0.85;
+  }
+
+  #share-label {
+    font-size: 1em;
+    margin-right: 0.5em;
+  }
+  
+  #copy-button {
+    background: var(--button-bg);
+    color: var(--button-fg);
+    border: none;
+    padding: 0.4em 1em;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  #copy-button:hover {
+    opacity: 0.8;
+  }
+  #share-container {
+    margin-top: 2em;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75em;
+  }
+  
+  #copy-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    font-size: 0.9em;
+    background: none;
+    color: var(--link);
+    border: none;
+    cursor: pointer;
+    padding: 0.3em 0.6em;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+  }
+  
+  #copy-button:hover {
+    background: rgba(128, 128, 128, 0.1);
+  }
+  
+  #copy-button svg {
+    vertical-align: middle;
+  }
+  
+  #copy-confirm {
+    color: var(--fg);
+    font-size: 0.85em;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+    
+  .card-cell.selected {
+    color: white;
+    font-weight: bold;
+  }
+  
+  .card-cell.rainbow-0.selected { background: red; }
+  .card-cell.rainbow-1.selected { background: orange; }
+  .card-cell.rainbow-2.selected { background: yellow; color: black; }
+  .card-cell.rainbow-3.selected { background: green; }
+  .card-cell.rainbow-4.selected { background: blue; }
+  .card-cell.rainbow-5.selected { background: purple; }
+
+  #paint-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 9999;
+  }
+  
+  /* Bullet flying out from center */
+  .paint-bullet {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.85;
+    filter: blur(2px);
+    transform: translate(0, 0);
+    animation: fly-out 0.6s ease-out forwards;
+    will-change: transform, opacity;
+  }
+  
+  @keyframes fly-out {
+    0% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(var(--dx), var(--dy)) scale(0.8);
+      opacity: 0.7;
+    }
+  }
+  
+  /* Final splat */
+  .paint-splatter {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    filter: blur(3px);
+    opacity: 0.95;
+    animation: drip 1.2s ease-in forwards;
+    will-change: transform, opacity;
+  }
+  
+  @keyframes drip {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(40px);
+      opacity: 0.5;
+    }
+  }
+  
+  /* Paint trail under the splat */
+  .paint-trail {
+    position: absolute;
+    width: 2px;
+    height: 50px;
+    background: white;
+    opacity: 0.3;
+    border-radius: 1px;
+    filter: blur(1px);
+    animation: trail-fade 4s linear forwards;
+  }
+  
+  @keyframes trail-fade {
+    0% {
+      opacity: 0.3;
+      transform: scaleY(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scaleY(1.5);
+    }
+  }
+  
+  #paint-hero {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 0;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2) rotate(0deg);
+    transition: transform 0.5s ease, opacity 0.3s ease;
+    z-index: 9998;
+    pointer-events: none;
+    filter: drop-shadow(0 0 30px hotpink);
+  }
+  
+  #paint-hero.showing {
+    height: 80vh;
+    opacity: 1;
+    animation: wobble 2.4s ease-in-out infinite;
+  }
+  
+  @keyframes wobble {
+    0% { transform: translate(-50%, -50%) scale(0.8) rotate(-3deg); }
+    50% { transform: translate(-50%, -50%) scale(0.8) rotate(3deg); }
+    100% { transform: translate(-50%, -50%) scale(0.8) rotate(-3deg); }
+  }
+  

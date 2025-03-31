@@ -1,0 +1,21 @@
+{
+    "name": "switch-2-bingo",
+    "version": "1.0.0",
+    "description": "Nintendo Switch 2 Rumor Bingo — a dark little joke of a web app for predicting disappointment",
+    "scripts": {
+      "build": "tsc",
+      "start": "tsc && open index.html",
+      "prepare": "husky install",
+      "format": "prettier --write ."
+    },
+    "devDependencies": {
+      "husky": "^9.0.0",
+      "lint-staged": "^15.2.0",
+      "prettier": "^3.2.5",
+      "typescript": "^5.0.0"
+    },
+    "lint-staged": {
+      "**/*.{ts,js,json,css,html,md}": "prettier --write"
+    }
+  }
+  
