@@ -3,7 +3,7 @@
 A brutally honest little web app for predicting — and emotionally preparing for — the inevitable catastrophe that is the Nintendo Switch 2. This isn’t just a game. It’s grief counseling with clickables.
 
 🎮 **Play it here:**  
-[https://matt-meaningfulgigs.github.io/switch2-bingo/]([https://matt-meaningfulgigs.github.io/switch2-bingo/))
+[https://matt-meaningfulgigs.github.io/switch-2-bingo/](https://matt-meaningfulgigs.github.io/switch-2-bingo/)
 
 ---
 
