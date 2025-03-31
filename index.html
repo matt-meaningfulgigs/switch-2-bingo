@@ -1,29 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Switch 2 Rumor Bingo</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-  <h1>Nintendo Switch 2 Rumor Bingo for Russ</h1>
-  <p class="subtitle">Let's see this baby get pushed all the way to 480p/18fps!</p>
-  <p><button id="generate">Generate New Card</button></p>
-  <div id="bingo-card"></div>
-  <div id="bingo-message">BINGO! Skeet Skeet all over Miyamoto.</div>
-  <div id="paint-container"></div>
-  <img id="paint-hero" src="./assets/paint-hero.png" alt="Victory" />
-  <div id="share-container">
-    <button id="copy-button">
-      Share Link
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-        <path d="M10 1.5A1.5 1.5 0 0 1 11.5 3v1H10V3H6v10h1.5v1H6A1.5 1.5 0 0 1 4.5 12.5v-9A1.5 1.5 0 0 1 6 2h4z"/>
-        <path d="M9.5 4A1.5 1.5 0 0 0 8 5.5v9A1.5 1.5 0 0 0 9.5 16h4A1.5 1.5 0 0 0 15 14.5v-9A1.5 1.5 0 0 0 13.5 4h-4zM9 5.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-9z"/>
-      </svg>
-    </button>
-    <span id="copy-confirm">Copied!</span>
-  </div>  
-  <script src="./dist/main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch 2 Rumor Bingo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Nintendo Switch 2 Rumor Bingo for Russ</h1>
+    <p class="subtitle">
+      Let's see this baby get pushed all the way to 480p/18fps!
+    </p>
+    <p><button id="generate">Generate New Card</button></p>
+    <div id="bingo-card"></div>
+    <div id="bingo-message">BINGO! Skeet Skeet all over Miyamoto.</div>
+    <div id="paint-container"></div>
+    <img id="paint-hero" src="assets/paint-hero.png" alt="Victory" />
+    <div id="share-container">
+      <button id="copy-button">
+        Share Link
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M10 1.5A1.5 1.5 0 0 1 11.5 3v1H10V3H6v10h1.5v1H6A1.5 1.5 0 0 1 4.5 12.5v-9A1.5 1.5 0 0 1 6 2h4z"
+          />
+          <path
+            d="M9.5 4A1.5 1.5 0 0 0 8 5.5v9A1.5 1.5 0 0 0 9.5 16h4A1.5 1.5 0 0 0 15 14.5v-9A1.5 1.5 0 0 0 13.5 4h-4zM9 5.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-9z"
+          />
+        </svg>
+      </button>
+      <span id="copy-confirm">Copied!</span>
+    </div>
+    <script src="dist/main.js"></script>
+  </body>
 </html>

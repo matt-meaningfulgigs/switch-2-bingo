@@ -13,7 +13,7 @@ I made this for Russ, because we both need to start the mourning process early. 
 
 Of course, the games will be "charmingly" designed for **middle-aged Japanese businessmen who believe they’re actually high school girls**, and every marketing video will show someone playing it joyfully in a sunlit Tokyo loft, instead of hunched over a creaking Joy-Con in the dead of night, quietly whispering “why do I still believe?”
 
-This bingo card is for us — the fools. The believers. The spiritually bankrupt clingers-on who somehow convinced ourselves that **this time** Nintendo would try. They won’t. But at least now we can predict *how* they’ll let us down.
+This bingo card is for us — the fools. The believers. The spiritually bankrupt clingers-on who somehow convinced ourselves that **this time** Nintendo would try. They won’t. But at least now we can predict _how_ they’ll let us down.
 
 ---
 
