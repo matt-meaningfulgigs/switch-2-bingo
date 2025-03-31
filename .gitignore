@@ -59,7 +59,6 @@ web_modules/
 
 # TypeScript
 *.tsbuildinfo
-dist/
 
 # Caches
 .npm
